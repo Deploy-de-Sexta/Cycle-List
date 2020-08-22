@@ -257,6 +257,32 @@ describe('Cycle', () => {
     });
   });
 
+  describe('Prepend', () => {
+    it('returns new cycle', () => {
+      const cycle = new Cycle([1, 2 ,3]);
+      const newCycle = cycle.prepend(4);
+
+      expect(newCycle).toBeInstanceOf(Cycle);
+      expect(newCycle).not.toBe(cycle);
+    });
+
+    it('Returns cycle with new item', () => {
+      const cycle = new Cycle([1, 2, 3]);
+      const newCycle = cycle.prepend(4);
+
+      expect(newCycle.array).toEqual([4, 1, 2, 3]);
+    });
+
+    it('Returns new cycle starting at current pointer position', () => {
+      const cycle = new Cycle([1, 2, 3]);
+      cycle.get();
+
+      const newCycle = cycle.prepend(4);
+
+      expect(newCycle.array).toEqual([4, 2, 3, 1]);
+    });
+  });
+
   describe('Map', () => {
     it('Returns a new cycle instance', () => {
       const cycle = new Cycle([1, 2 ,3]);
