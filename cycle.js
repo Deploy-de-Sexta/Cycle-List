@@ -66,6 +66,14 @@ module.exports = class Cycle {
     return new Cycle(uniq(this.#items));
   }
 
+  get array() {
+    if (this.#pointer === 0){
+      return [ ...this.#items ];
+    }
+
+    return this.map(i => i).array;
+  }
+
   map(fn) {
     if (this.#pointer === 0) {
       return new Cycle(this.#items.map(i => fn(i)));

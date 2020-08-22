@@ -198,6 +198,39 @@ describe('Cycle', () => {
     });
   });
 
+  describe('Array', () => {
+    it('returns an array', () => {
+      const cycle = new Cycle([1, 2 ,3]);
+      
+      expect(cycle.array).toBeInstanceOf(Array);
+      expect(cycle.array).toEqual([1, 2, 3]);
+    });
+
+    it('Returns array from current pointer', () => {
+      const cycle = new Cycle([1, 2, 3]);
+      cycle.get();
+
+      expect(cycle.array).toEqual([2, 3, 1]);
+    });
+
+    it('dont allow changing original cycle', () => {
+      const cycle = new Cycle([1, 2, 3]);
+      const arr = cycle.array;
+
+      arr.push(4);
+
+      expect(cycle.array).toEqual([1, 2, 3]);
+    });
+
+    it('items starts at current pointer position', () => {
+      const cycle = new Cycle([1, 2, 3]);
+
+      cycle.get();
+
+      expect(cycle.array).toEqual([2, 3, 1]);
+    });
+  });
+
   describe('Map', () => {
     it('Returns a new cycle instance', () => {
       const cycle = new Cycle([1, 2 ,3]);
