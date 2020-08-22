@@ -33,6 +33,26 @@ describe('Cycle', () => {
     });
   });
 
+  describe('Got', () => {
+    it('throws error when items is empty', () => {
+      const cycle = new Cycle([]);
+      expect(() => cycle.got()).toThrow(new Error('Cannot get item when array is empty'));
+    });
+
+    it('Get items in reverse sequence', () => {
+      const cycle = new Cycle([1, 2]);
+      expect(cycle.got()).toEqual(2);
+      expect(cycle.got()).toEqual(1);
+    });
+
+    it('Cycles all items', () => {
+      const cycle = new Cycle([1, 2]);
+      expect(cycle.got()).toEqual(2);
+      expect(cycle.got()).toEqual(1);
+      expect(cycle.got()).toEqual(2);
+    });
+  });
+
   describe('Empty', () => {
     it('Returns true if items is empty', () => {
       const cycle = new Cycle([]);

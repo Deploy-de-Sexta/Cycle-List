@@ -23,6 +23,20 @@ module.exports = class Cycle {
     return result;
   }
 
+  got() {
+    if (!this.#items.length) throw new Error('Cannot get item when array is empty');
+
+    if (this.#pointer === 0) {
+      this.#pointer = this.length - 1;
+    } else {
+      this.#pointer -= 1;
+    }
+
+    const result = this.#items[this.#pointer];
+    
+    return result;
+  }
+
   get empty() {
     return this.#items.length === 0;
   }
