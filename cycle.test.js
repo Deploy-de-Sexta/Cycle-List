@@ -146,6 +146,38 @@ describe('Cycle', () => {
     });
   });
 
+  describe('Dup', () => {
+    it('Creates new cycle instance', () => {
+      const cycle = new Cycle([1, 2 ,3]);
+      const newCycle  = cycle.dup;
+
+      expect(newCycle).toBeInstanceOf(Cycle);
+      expect(newCycle).not.toBe(cycle);
+    });
+
+    it('Duplicates cycle', () => {
+      const cycle = new Cycle([1, 2 ,3]);
+      const newCycle  = cycle.dup;
+
+      expect(newCycle.get()).toEqual(1);
+      expect(newCycle.get()).toEqual(2);
+      expect(newCycle.get()).toEqual(3);
+      expect(newCycle.length).toEqual(3);
+    });
+
+    it('Duplicates cycle beginning on the current pointer position', () => {
+      const cycle = new Cycle([1, 2 ,3]);
+      cycle.get();
+      
+      const newCycle  = cycle.dup;
+
+      expect(newCycle.get()).toEqual(2);
+      expect(newCycle.get()).toEqual(3);
+      expect(newCycle.get()).toEqual(1);
+      expect(newCycle.length).toEqual(3);
+    });
+  });
+
   describe('Map', () => {
     it('Returns a new cycle instance', () => {
       const cycle = new Cycle([1, 2 ,3]);

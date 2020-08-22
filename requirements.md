@@ -12,7 +12,7 @@ _Obs.: Sempre ter imutabilidade em mente!_
 1. <del>`.get(default_)`: Retorna o próximo item da lista. Se a lista estiver vazia, retorna `default_`.</del>
 1. <del>`.head(n)`: Retorna os próximos `n` itens da lista em um novo **Cycle**.</del>
 1. <del>`.tail(n)`: Retorna os `n` itens anteriores da lista em um novo **Cycle**.</del>
-1. `.dup`: Retorna um novo **Cycle** com a mesma lista.
+1. <del>`.dup`: Retorna um novo **Cycle** com a mesma lista.</del>
 1. `.uniq`: Retorna um novo **Cycle** removendo os itens duplicados.
 1. `.array`: Retorna um array começando pelo item que está no ponteiro.
 1. <del>`.empty`: Retorna `true` se a lista estiver vazia e `false` caso contrário.</del>
