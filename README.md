@@ -1,5 +1,7 @@
 # Cycle List
 
+![Integração Contínua](https://github.com/Deploy-de-Sexta/Cycle-List/workflows/Integra%C3%A7%C3%A3o%20Cont%C3%ADnua/badge.svg)
+
 Lista cíclica criada a partir de um Array ou Set.
 
 _Obs.: Sempre ter imutabilidade em mente!_
