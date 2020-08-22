@@ -10,11 +10,18 @@ module.exports = class Cycle {
     return this.#items.length;
   }
 
-  get() {
-    if (!this.#items.length) throw new Error('Cannot get item when array is empty');
+  get(default_) {
+    if (this.empty) {
+      if (default_) {
+        return default_;
+      }
+
+      throw new Error('Cannot get item when array is empty');
+    }
+
     const result = this.#items[this.#pointer];
 
-    if (this.#pointer === this.#items.length - 1) {
+    if (this.#pointer === this.length - 1) {
       this.#pointer = 0;
     } else {
       this.#pointer += 1;
@@ -24,7 +31,7 @@ module.exports = class Cycle {
   }
 
   got() {
-    if (!this.#items.length) throw new Error('Cannot get item when array is empty');
+    if (this.empty) throw new Error('Cannot get item when array is empty');
 
     if (this.#pointer === 0) {
       this.#pointer = this.length - 1;

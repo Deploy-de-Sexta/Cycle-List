@@ -19,6 +19,11 @@ describe('Cycle', () => {
       expect(() => cycle.get()).toThrow(new Error('Cannot get item when array is empty'));
     });
 
+    it('returns default value if items is empty', () => {
+      const cycle = new Cycle([]);
+      expect(cycle.get(7)).toEqual(7);
+    });
+
     it('Get items in sequence', () => {
       const cycle = new Cycle([1, 2]);
       expect(cycle.get()).toEqual(1);
