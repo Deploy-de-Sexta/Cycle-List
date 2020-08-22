@@ -283,6 +283,32 @@ describe('Cycle', () => {
     });
   });
 
+  describe('Filter', () => {
+    it('returns new cycle', () => {
+      const cycle = new Cycle([1, 2 ,3]);
+      const newCycle = cycle.filter(n => n === 2);
+
+      expect(newCycle).toBeInstanceOf(Cycle);
+      expect(newCycle).not.toBe(cycle);
+    });
+
+    it('Returns with filtered item', () => {
+      const cycle = new Cycle([1, 2, 3]);
+      const newCycle = cycle.filter(n => n < 3);
+
+      expect(newCycle.array).toEqual([1, 2]);
+    });
+
+    it('Returns new cycle starting at current pointer position', () => {
+      const cycle = new Cycle([1, 2, 3]);
+      cycle.get();
+
+      const newCycle = cycle.filter(i => i < 3);
+
+      expect(newCycle.array).toEqual([2, 1]);
+    });
+  });
+
   describe('Map', () => {
     it('Returns a new cycle instance', () => {
       const cycle = new Cycle([1, 2 ,3]);

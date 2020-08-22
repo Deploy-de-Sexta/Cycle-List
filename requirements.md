@@ -19,7 +19,7 @@ _Obs.: Sempre ter imutabilidade em mente!_
 1. <del>`.append(v)`: Cria novo **Cycle** adicionando `v` na última posição da lista. Não move o ponteiro.</del>
 1. <del>`.prepend(v)`: Cria novo **Cycle** adicionando `v` na primeira posição da lista. Não move o ponteiro.</del>
 1. <del>`.map(fn)`: Retorna novo **Cycle** mapeando todos os itens da lista começando da posição atual do ponteiro.</del>
-1. `.filter(fn)`: Retorna novo **Cycle** filtrando todos os itens da lista começando da posição atual do ponteiro.
+1. <del>`.filter(fn)`: Retorna novo **Cycle** filtrando todos os itens da lista começando da posição atual do ponteiro.</del>
 1. `.has(v)`: Retorna `true` se a lista tem o item `v`, e falso caso contrário.
 1. `.has(fn)`: Retorna `true` se a função `fn` retornar `true` para algum item da lista. Caso contrário retorna `false`.
 1. `.concat(c1, c2, c3, ...)`: Cria um novo **Cycle** concatenando com outros **Cycle**s. Mantém ponteiro do **Cycle** original.
