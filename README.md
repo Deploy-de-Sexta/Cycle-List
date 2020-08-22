@@ -23,3 +23,9 @@ _Obs.: Sempre ter imutabilidade em mente!_
 1. `.has(v)`: Retorna `true` se a lista tem o item `v`, e falso caso contrário.
 1. `.has(fn)`: Retorna `true` se a função `fn` retornar `true` para algum item da lista. Caso contrário retorna `false`.
 1. `.concat(c1, c2, c3, ...)`: Cria um novo **Cycle** concatenando com outros **Cycle**s. Mantém ponteiro do **Cycle** original.
+
+## Testes
+
+```
+npm test
+```
