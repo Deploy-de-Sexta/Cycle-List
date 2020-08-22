@@ -1,3 +1,5 @@
+const { uniq } = require('lodash');
+
 module.exports = class Cycle {
   #items = [];
   #pointer = 0;
@@ -58,6 +60,10 @@ module.exports = class Cycle {
 
   get dup() {
     return this.map(i => i);
+  }
+
+  get uniq() {
+    return new Cycle(uniq(this.#items));
   }
 
   map(fn) {

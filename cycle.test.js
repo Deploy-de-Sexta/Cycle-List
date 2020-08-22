@@ -178,6 +178,26 @@ describe('Cycle', () => {
     });
   });
 
+  describe('Uniq', () => {
+    it('Creates new cycle instance', () => {
+      const cycle = new Cycle([1, 2 ,3]);
+      const newCycle  = cycle.uniq;
+
+      expect(newCycle).toBeInstanceOf(Cycle);
+      expect(newCycle).not.toBe(cycle);
+    });
+
+    it('Returns unique items', () => {
+      const cycle = new Cycle([1, 1, 2, 2, 3]);
+      const newCycle  = cycle.uniq;
+
+      expect(newCycle.get()).toEqual(1);
+      expect(newCycle.get()).toEqual(2);
+      expect(newCycle.get()).toEqual(3);
+      expect(newCycle.length).toEqual(3);
+    });
+  });
+
   describe('Map', () => {
     it('Returns a new cycle instance', () => {
       const cycle = new Cycle([1, 2 ,3]);
