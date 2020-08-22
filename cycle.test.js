@@ -108,6 +108,44 @@ describe('Cycle', () => {
     });
   });
 
+  describe('Tail', () => {
+    it('Returns a new cycle instance', () => {
+      const cycle = new Cycle([1, 2 ,3]);
+      const newCycle = cycle.tail();
+
+      expect(newCycle).toBeInstanceOf(Cycle);
+      expect(newCycle).not.toBe(cycle);
+    });
+
+    it('Returns previous item if no argument is passed', () => {
+      const cycle = new Cycle([1, 2 ,3]);
+      const newCycle = cycle.tail();
+
+      expect(newCycle.get()).toEqual(3);
+      expect(newCycle.length).toEqual(1);
+    });
+
+    it('Returns first N items', () => {
+      const cycle = new Cycle([1, 2 ,3]);
+      const newCycle = cycle.tail(2);
+
+      expect(newCycle.get()).toEqual(3);
+      expect(newCycle.get()).toEqual(2);
+      expect(newCycle.length).toEqual(2);
+    });
+
+    it('Cycles the items', () => {
+      const cycle = new Cycle([1, 2 ,3]);
+      const newCycle  = cycle.tail(4);
+
+      expect(newCycle.length).toEqual(4);
+      expect(newCycle.get()).toEqual(3);
+      expect(newCycle.get()).toEqual(2);
+      expect(newCycle.get()).toEqual(1);
+      expect(newCycle.get()).toEqual(3);
+    });
+  });
+
   describe('Map', () => {
     it('Returns a new cycle instance', () => {
       const cycle = new Cycle([1, 2 ,3]);

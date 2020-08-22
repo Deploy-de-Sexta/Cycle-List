@@ -9,9 +9,9 @@ _Obs.: Sempre ter imutabilidade em mente!_
 1. <del>`.length`: Retorna a quantidade de itens na lista.</del>
 1. <del>`.get()`: Retorna o próximo item da lista e move ponteiro. Lança erro se a lista estiver vazia.</del>
 1. <del>`.got()`: Retorna o item anterior da lista e move ponteiro. Lança erro se a lista estiver vazia.</del>
-1. `.get(default_)`: Retorna o próximo item da lista. Se a lista estiver vazia, retorna `default_`.
-1. `.head(n)`: Retorna os próximos `n` itens da lista em um novo **Cycle**.
-1. `.tail(n)`: Retorna os `n` itens anteriores da lista em um novo **Cycle**.
+1. <del>`.get(default_)`: Retorna o próximo item da lista. Se a lista estiver vazia, retorna `default_`.</del>
+1. <del>`.head(n)`: Retorna os próximos `n` itens da lista em um novo **Cycle**.</del>
+1. <del>`.tail(n)`: Retorna os `n` itens anteriores da lista em um novo **Cycle**.</del>
 1. `.dup`: Retorna um novo **Cycle** com a mesma lista.
 1. `.uniq`: Retorna um novo **Cycle** removendo os itens duplicados.
 1. `.array`: Retorna um array começando pelo item que está no ponteiro.

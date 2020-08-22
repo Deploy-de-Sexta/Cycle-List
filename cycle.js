@@ -52,6 +52,10 @@ module.exports = class Cycle {
     return new Cycle(Array(n).fill(null).map(() => this.get()));
   }
 
+  tail(n) {
+    return new Cycle(Array(n).fill(null).map(() => this.got()));
+  }
+
   map(fn) {
     if (this.#pointer === 0) {
       return new Cycle(this.#items.map(i => fn(i)));
