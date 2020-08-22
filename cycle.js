@@ -96,4 +96,12 @@ module.exports = class Cycle {
 
     return new Cycle(firstHalf.concat(secondHalf).map(i => fn(i)));
   }
+
+  has(n) {
+    if (typeof n === 'function') {
+      return this.#items.some(i => n(i));
+    }
+
+    return this.#items.includes(n);
+  }
 }

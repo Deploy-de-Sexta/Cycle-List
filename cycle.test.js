@@ -341,5 +341,27 @@ describe('Cycle', () => {
       expect(newCycle.get()).toEqual(2);
     });
   });
+
+  describe('Has', () => {
+    it('returns true if cycle has item', () => {
+      const cycle = new Cycle([1, 2 ,3]);
+      expect(cycle.has(1)).toBe(true);
+    });
+
+    it('returns false if cycle does not have item', () => {
+      const cycle = new Cycle([1, 2 ,3]);
+      expect(cycle.has(0)).toBe(false);
+    });
+
+    it('returns true if fn returns true for any item', () => {
+      const cycle = new Cycle([1, 2 ,3]);
+      expect(cycle.has(n => n > 2)).toBe(true);
+    });
+
+    it('returns false if fn does not return true for any item', () => {
+      const cycle = new Cycle([1, 2 ,3]);
+      expect(cycle.has(n => n > 10)).toBe(false);
+    });
+  });
   
 });
