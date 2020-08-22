@@ -104,4 +104,8 @@ module.exports = class Cycle {
 
     return this.#items.includes(n);
   }
+
+  concat(...cycles) {
+    return new Cycle(cycles.reduce((acc, curr) => acc.concat(curr.array), this.array));
+  }
 }

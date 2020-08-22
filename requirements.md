@@ -22,4 +22,4 @@ _Obs.: Sempre ter imutabilidade em mente!_
 1. <del>`.filter(fn)`: Retorna novo **Cycle** filtrando todos os itens da lista começando da posição atual do ponteiro.</del>
 1. <del>`.has(v)`: Retorna `true` se a lista tem o item `v`, e falso caso contrário.</del>
 1. <del>`.has(fn)`: Retorna `true` se a função `fn` retornar `true` para algum item da lista. Caso contrário retorna `false`.</del>
-1. `.concat(c1, c2, c3, ...)`: Cria um novo **Cycle** concatenando com outros **Cycle**s. Mantém ponteiro do **Cycle** original.
+1. <del>`.concat(c1, c2, c3, ...)`: Cria um novo **Cycle** concatenando com outros **Cycle**s. Mantém ponteiro do **Cycle** original.</del>

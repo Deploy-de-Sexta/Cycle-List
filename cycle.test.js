@@ -363,5 +363,40 @@ describe('Cycle', () => {
       expect(cycle.has(n => n > 10)).toBe(false);
     });
   });
+
+  describe('Concat', () => {
+    it('Returns a new cycle instance', () => {
+      const cycle1 = new Cycle([1, 2]);
+      const cycle2 = new Cycle([3, 4]);
+      const newCycle = cycle1.concat(cycle2);
+
+      expect(newCycle).toBeInstanceOf(Cycle);
+      expect(newCycle).not.toBe(cycle1);
+      expect(newCycle).not.toBe(cycle2);
+    });
+
+    it('concats all cycles', () => {
+      const cycle1 = new Cycle([1, 2]);
+      const cycle2 = new Cycle([3, 4]);
+      const cycle3 = new Cycle([5, 6]);
+
+      const newCycle = cycle1.concat(cycle2, cycle3);
+
+      expect(newCycle.array).toEqual([1, 2, 3, 4, 5, 6]);
+    });
+
+    it('concats all cycles respecting their pointers', () => {
+      const cycle1 = new Cycle([1, 2]);
+      const cycle2 = new Cycle([3, 4]);
+      const cycle3 = new Cycle([5, 6]);
+
+      cycle1.get();
+      cycle3.get();
+
+      const newCycle = cycle1.concat(cycle2, cycle3);
+
+      expect(newCycle.array).toEqual([2, 1, 3, 4, 6, 5]);
+    });
+  });
   
 });
