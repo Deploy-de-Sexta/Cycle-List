@@ -74,6 +74,10 @@ module.exports = class Cycle {
     return this.map(i => i).array;
   }
 
+  append(n) {
+    return new Cycle(this.array.concat([n]));
+  }
+
   map(fn) {
     if (this.#pointer === 0) {
       return new Cycle(this.#items.map(i => fn(i)));

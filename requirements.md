@@ -16,7 +16,7 @@ _Obs.: Sempre ter imutabilidade em mente!_
 1. <del>`.uniq`: Retorna um novo **Cycle** removendo os itens duplicados.</del>
 1. <del>`.array`: Retorna um array começando pelo item que está no ponteiro.</del>
 1. <del>`.empty`: Retorna `true` se a lista estiver vazia e `false` caso contrário.</del>
-1. `.append(v)`: Cria novo **Cycle** adicionando `v` na última posição da lista. Não move o ponteiro.
+1. <del>`.append(v)`: Cria novo **Cycle** adicionando `v` na última posição da lista. Não move o ponteiro.</del>
 1. `.prepend(v)`: Cria novo **Cycle** adicionando `v` na primeira posição da lista. Não move o ponteiro.
 1. `.map(fn)`: Retorna novo **Cycle** mapeando todos os itens da lista começando da posição atual do ponteiro.
 1. `.filter(fn)`: Retorna novo **Cycle** filtrando todos os itens da lista começando da posição atual do ponteiro.
